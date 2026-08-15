@@ -1,0 +1,26 @@
+DOCUMIND ENTERPRISE INFORMATION SECURITY & DATA GOVERNANCE POLICY
+Document Control ID: SEC-POL-2026-V4
+Effective Date: January 15, 2026
+Applies To: All Employees, Contractors, Subcontractors, and Third-Party System Integrators.
+
+1. Authentication & Access Management:
+- Section 1.1 - Password Standards: All user accounts must use strong passwords with a minimum length of 16 characters including uppercase, lowercase, numbers, and symbols. Passwords must be rotated every 90 days or immediately upon suspected compromise.
+- Section 1.2 - Multi-Factor Authentication (MFA): MFA is MANDATORY across all enterprise portals, single sign-on (SSO) endpoints, code repositories, and production server access. FIDO2 / hardware security keys or TOTP authenticator apps are required; SMS-based MFA is prohibited for internal systems.
+- Section 1.3 - Role-Based Access Control (RBAC): Access to production data, vector database indices, customer document stores, and secret managers is governed strictly by Least Privilege principles. All privileged access requires JIT (Just-In-Time) approval tickets valid for a maximum of 8 hours.
+
+2. RAG & AI Data Privacy Standards:
+- Section 2.1 - Grounding & Isolation: Customer documents uploaded to the DocuMind RAG engine must remain logically and cryptographically isolated within tenant-specific vector namespaces.
+- Section 2.2 - LLM Training Restrictions: No customer uploaded documents, vectors, embeddings, or query telemetry may be transmitted to external LLM providers for model training purposes. Zero-Data-Retention (ZDR) enterprise agreements must be active for all external LLM API providers (e.g. Google Gemini Enterprise, OpenAI Enterprise).
+- Section 2.3 - PII Sanitization: Automatic PII scrubbing filters (redacting SSNs, credit card numbers, and confidential passwords) must run prior to chunking and vector embedding generation.
+
+3. Incident Response & Security Escalations:
+- Section 3.1 - Incident Severity Thresholds: Security incidents are classified as SEV-1 (Critical Data Breach / System Outage), SEV-2 (High Risk / Unauthorized Access Attempt), or SEV-3 (Low Risk / Policy Violation).
+- Section 3.2 - Reporting SLA: All suspected security incidents must be reported immediately to security@documind.ai or via the internal #security-escalations Slack channel within 15 minutes of detection.
+- Section 3.3 - Action Protocols for SEV-1: Immediate revocation of compromised credentials, total isolate of compromised vector storage instances, and notification of the Security Taskforce & Legal General Counsel within 1 hour.
+
+4. Data Retention & Document Disposal:
+- Section 4.1: Active document indexes are retained as long as tenant workspace remains active.
+- Section 4.2: Deleted documents must be purged from memory and vector store within 60 seconds of user deletion request (`DELETE /api/documents/:id`). Backup index snapshots are permanently purged after 30 days.
+
+Approved by: Security Steering Committee & Chief Information Security Officer (CISO)
+DocuMind Technologies Inc.
