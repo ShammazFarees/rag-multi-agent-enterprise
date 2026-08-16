@@ -5,6 +5,7 @@
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Groq Llama 3.3](https://img.shields.io/badge/Groq-Llama%203.3%2070B-f97316?style=for-the-badge)](https://groq.com)
+[![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg?style=for-the-badge)](LICENSE)
 
 **DocuMind AI** is an enterprise-grade Retrieval-Augmented Generation (RAG) dashboard and multi-tool agent workspace. It enables instant multi-format document ingestion (`.pdf`, `.txt`, `.csv`, `.docx`), vector similarity search with TF-IDF cosine matching, interactive source grounding citations, and automated agent tools for email drafting and task management.
 
@@ -88,62 +89,8 @@ rag-multi-agent-enterprise/
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## 🔒 Proprietary & Copyright Notice
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/ShammazFarees/rag-multi-agent-enterprise.git
-cd rag-multi-agent-enterprise
-```
+Copyright (c) 2026 **Mohamed Shammas**. All rights reserved.
 
-### 2. Backend Setup (FastAPI)
-```bash
-cd backend
-python -m venv .venv
-# On Windows:
-.venv\Scripts\activate
-# On macOS/Linux:
-source .venv/bin/activate
-
-pip install -r ../requirements.txt
-
-# Create .env file with your API keys:
-echo "GROQ_API_KEY=gsk_your_groq_key_here" > .env
-echo "GEMINI_API_KEY=AQ.your_gemini_key_here" >> .env
-
-python app/main.py
-# Backend server runs at http://localhost:8000
-```
-
-### 3. Frontend Setup (React + Vite)
-```bash
-cd ../frontend
-npm install
-npm run dev
-# Frontend runs at http://localhost:5173
-```
-
----
-
-## 🛠️ Deploying to Vercel
-
-The repository is pre-configured with `vercel.json` and `api/index.py` for instant single-command deployment:
-
-```bash
-npx vercel --prod
-```
-
-### Add Environment Variables on Vercel:
-```bash
-npx vercel env add GROQ_API_KEY production --value "your_groq_key" --yes
-npx vercel env add GEMINI_API_KEY production --value "your_gemini_key" --yes
-npx vercel --prod
-```
-
----
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for details.
-
-Developed with ❤️ by **Mohamed Shammas**
+This software and source code are proprietary. Unauthorized copying, modification, editing, redistribution, or commercial use is strictly prohibited. See the [`LICENSE`](LICENSE) file for complete details.
